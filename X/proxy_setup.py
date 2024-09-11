@@ -4,7 +4,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 from fake_useragent import UserAgent
 
-# def create_driver():
+# def create_driver() -> None:
 #     # Настройка прокси и user-agent
 #     proxy = "123.123.123.123:8080"
 #     user_agent = UserAgent().random
@@ -19,7 +19,7 @@ from fake_useragent import UserAgent
 #     return driver
 
 
-def create_driver():
+def create_driver() -> None:
     try:
         # Настройка драйвера без прокси и пользовательского user-agent
         chrome_options = webdriver.ChromeOptions()
