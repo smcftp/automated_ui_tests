@@ -5,14 +5,15 @@ from multiprocessing import Pool
 import random
 import string
 
+from typing import List, Tuple
+
 # Список аккаунтов
-accounts = [
-    ("akakakvvvcc@gmail.com", "Y1oT5nkQLp")
-    # ("email2@gmail.com", "password2"),
-    # Добавьте больше аккаунтов
+accounts: List[Tuple[str, str]] = [
+    ("email1@example.com", "password1"),
+    ("email2@example.com", "password2"),
 ]
 
-def run_test(account):
+def run_test(account: Tuple[str, str]) -> None:
     email, password = account
     driver = create_driver()
     
