@@ -5,8 +5,10 @@ from multiprocessing import Pool
 from x_utils import login_twitter, change_password, post_random_tweet
 from proxy_setup import create_driver
 
+from typing import List, Tuple
+
 # Функция для тестирования одного аккаунта
-def test_account(account):
+def test_account(account: Tuple[str, str]) -> None:
     email, password = account
     driver = create_driver()
     
@@ -32,10 +34,10 @@ def test_account(account):
 # Основной процесс
 if __name__ == "__main__":
     # Список аккаунтов
-    accounts = [
+    accounts: List[Tuple[str, str]] = [
         ("email1@example.com", "password1"),
         ("email2@example.com", "password2"),
-        # Добавьте больше аккаунтов
+        # Добавленеи новых аккаунтов
     ]
 
     # Параллельное тестирование
